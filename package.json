@@ -1,0 +1,9 @@
+{
+  "name": "exp4-staged-vars",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "node -e \"console.log('BUILD_LOG marker=' + require('fs').readFileSync('./marker.txt','utf8').trim() + ' TEST_STAGED_VAR=' + (process.env.TEST_STAGED_VAR||''))\"",
+    "predeploy": "node -e \"console.log('PREDEPLOY_LOG marker=' + require('fs').readFileSync('./marker.txt','utf8').trim() + ' TEST_STAGED_VAR=' + (process.env.TEST_STAGED_VAR||''))\"",
+    "start": "node server.js"
+  }
+}
